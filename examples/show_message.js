@@ -22,9 +22,9 @@ remote.connect({
 	key: '4d5b7754bb3cc6475ffb3ca09a14dee9'
 }, function( err, key ){
 	
-	remote.show_float( "Test", function(){
-		console.log('arguments', arguments)
-	})
+	remote.show_float( "Test" )
+	
+	remote.getChannels(console.log)
 })
 
 
