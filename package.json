@@ -1,0 +1,26 @@
+{
+  "name": "webos",
+  "version": "1.0.0",
+  "description": "webOS client for LG TVs",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "websocket": "^1.0.22"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://WeeJeWel@github.com/WeeJeWel/node-webos.git"
+  },
+  "author": "Emile Nijssen",
+  "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International",
+  "bugs": {
+    "url": "https://github.com/WeeJeWel/node-webos/issues"
+  },
+  "homepage": "https://github.com/WeeJeWel/node-webos#readme"
+}

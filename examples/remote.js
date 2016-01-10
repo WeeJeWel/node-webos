@@ -9,15 +9,6 @@ remote.connect({
 }, function( err, key ){
 	if( err ) return console.error('Error', err);
 	
-	remote.getInputs(console.log);
-	
-	remote.setInput("HDMI_1", console.log)
-
-//	remote.setChannel('3_13_1_925_2098_19401_1536', console.log)
-	return;
-	
-
-	
 	console.log('------- showing float --------');
 	remote.showFloat( "Test", function( err, result ){
 		if( err ) return console.error('Error', err);
