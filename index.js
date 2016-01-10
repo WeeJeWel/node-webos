@@ -1,3 +1,3 @@
 "use strict";
 
-module.exports = require('./lib/webos-remote.js');
+module.exports.Remote = require('./lib/webos-remote.js');
