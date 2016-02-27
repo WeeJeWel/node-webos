@@ -4,8 +4,6 @@ webOS client for LG TVs
 Largely inspired by [https://github.com/msloth/lgtv.js](https://github.com/msloth/lgtv.js). Thanks for all the hard work!
 
 ## Examples
- Attribution-NonCommercial-ShareAlike 4.0 International 
-
 ### Scanning for a TV
 
 ```javascript
