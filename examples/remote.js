@@ -9,6 +9,8 @@ remote.connect({
 }, function( err, key ){
 	if( err ) return console.error('Error', err);
 	
+	
+	setInterval(function(){
 	console.log('------- showing float --------');
 	remote.showFloat( "Test", function( err, result ){
 		if( err ) return console.error('Error', err);
@@ -22,11 +24,14 @@ remote.connect({
 			console.log('got %s channels', channels.length)
 			console.log('channel #1:', channels[0]);
 			
+			/*
 			console.log('------- disconnecting --------');
 			remote.disconnect(function( err, disconnected ){
 				if( err ) return console.error('Error', err);
 				console.log('Disconnected');			
 			});
+			*/
 		})
 	})
+	}, 5000);
 })
