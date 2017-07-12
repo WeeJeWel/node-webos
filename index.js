@@ -1,4 +1,4 @@
 "use strict";
 
-module.exports.Remote 	= require('./lib/remote.js');
-module.exports.Scanner 	= require('./lib/scanner.js');
+module.exports.WebOSDevice 		= require('./lib/WebOSDevice.js');
+module.exports.WebOSScanner 	= require('./lib/WebOSScanner.js');

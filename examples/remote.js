@@ -1,45 +1,30 @@
 "use strict";
 
-var Remote = require('..').Remote;
-var remote = new Remote({
+const WebOSDevice = require('..').WebOSDevice;
+
+let remote = new WebOSDevice({
+	address	: process.argv[2] || '192.168.1.68',
+	key		: process.argv[3] || '78ca390e682a061e34fd6d5b890c7999',
 	debug	: false
 });
 
-remote.on('error', console.error)
-
-remote.connect({
-	address	: process.argv[2] || '192.168.0.7',
-	key		: process.argv[3] || '4d5b7754bb3cc6475ffb3ca09a14dee9'
-}, function( err, key ){
-	if( err ) return console.error('Error', err);
-	
-	console.log('got key', key);
-
-	var i = 0;
-
-	setInterval(function(){
-		i++;
-		console.log('------- showing float --------');
-		remote.showFloat( "Test (" + i + ")", function( err, result ){
-			if( err ) return console.error('Error', err);
-
-			console.log("You should've seen 'Test (" + i + ")")
-
-			/*
-			console.log('------- getting channels --------');
-			remote.getChannels(function( err, channels ){
-				if( err ) return console.error('Error', err);
-
-				console.log('got %s channels', channels.length)
-				console.log('channel #1:', channels[0]);
-
-				console.log('------- disconnecting --------');
-				remote.disconnect(function( err, disconnected ){
-					if( err ) return console.error('Error', err);
-					console.log('Disconnected');
-				});
-			})
-			*/
-		})
-	}, 5000);
+remote.on('key', key => {
+	console.log('Key:', key);
 })
+
+setInterval(sendToast, 1000);
+sendToast();
+
+function sendToast() {
+	
+	let i = new Date();
+	
+	remote.showFloat(`Test float: ${i}!`)
+		.then( result => {
+			console.log(`Result ${i}:`, result);
+		})
+		.catch( err => {
+			console.error(`Error ${i}:`, err);
+		});
+	
+}

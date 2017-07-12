@@ -1,12 +1,9 @@
 "use strict";
 
-var Scanner = require('..').Scanner;
-var scanner = new Scanner();
+const WebOSScanner = require('..').WebOSScanner;
+let scanner = new WebOSScanner();
 
-scanner.startScanning();
+scanner.start();
 scanner.on('device', function(device){
-	console.log('device', device)
-	
-	scanner.stopScanning();
-	
+	console.log('device', device)	
 })
