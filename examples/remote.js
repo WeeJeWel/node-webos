@@ -12,6 +12,8 @@ remote.connect({
 	key		: process.argv[3] || '4d5b7754bb3cc6475ffb3ca09a14dee9'
 }, function( err, key ){
 	if( err ) return console.error('Error', err);
+	
+	console.log('got key', key);
 
 	var i = 0;
 
