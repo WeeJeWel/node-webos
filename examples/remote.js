@@ -12,23 +12,26 @@ remote.on('key', key => {
 	console.log('Key:', key);
 })
 
-setInterval(sendToast, 1000);
+//setInterval(sendToast, 1000);
 sendToast();
 
-var i = 0;
+//var i = 0;
 
 function sendToast() {
+	console.log('sendToast()');
 	
-	if( ++i > 3 ) return;
+	//if( ++i > 3 ) return;
 	
 	let msg = new Date();
 	
 	remote.showFloat(`Test float: ${msg}!`)
 		.then( result => {
 			console.log(`Result:`, result);
+			sendToast();
 		})
 		.catch( err => {
 			console.error(`Error:`, err);
+			sendToast();
 		});
 	
 }
