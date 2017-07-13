@@ -5,7 +5,7 @@ const WebOSDevice = require('..').WebOSDevice;
 let remote = new WebOSDevice({
 	address	: process.argv[2] || '192.168.1.68',
 	key		: process.argv[3] || '78ca390e682a061e34fd6d5b890c7999',
-	debug	: false
+	debug	: true
 });
 
 remote.on('key', key => {
@@ -15,16 +15,20 @@ remote.on('key', key => {
 setInterval(sendToast, 1000);
 sendToast();
 
+var i = 0;
+
 function sendToast() {
 	
-	let i = new Date();
+	if( ++i > 3 ) return;
 	
-	remote.showFloat(`Test float: ${i}!`)
+	let msg = new Date();
+	
+	remote.showFloat(`Test float: ${msg}!`)
 		.then( result => {
-			console.log(`Result ${i}:`, result);
+			console.log(`Result:`, result);
 		})
 		.catch( err => {
-			console.error(`Error ${i}:`, err);
+			console.error(`Error:`, err);
 		});
 	
 }
