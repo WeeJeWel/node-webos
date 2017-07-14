@@ -22,9 +22,11 @@ function sendToast() {
 	
 	//if( ++i > 3 ) return;
 	
+	setTimeout(() => {
+	
 	let msg = new Date();
 	
-	remote.showFloat(`Test float: ${msg}!`)
+	remote.createToast(`Test float: ${msg}!`)
 		.then( result => {
 			console.log(`Result:`, result);
 			sendToast();
@@ -33,5 +35,7 @@ function sendToast() {
 			console.error(`Error:`, err);
 			sendToast();
 		});
+		
+	}, 500);
 	
 }
