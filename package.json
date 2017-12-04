@@ -1,6 +1,6 @@
 {
   "name": "webos",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "webOS client for LG TVs",
   "main": "index.js",
   "directories": {
