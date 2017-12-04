@@ -3,7 +3,7 @@
 const WebOSDevice = require('..').WebOSDevice;
 
 let remote = new WebOSDevice({
-	address	: process.argv[2] || '192.168.1.68',
+	address	: process.argv[2] || '192.168.1.61',
 	key		: process.argv[3] || '78ca390e682a061e34fd6d5b890c7999',
 	debug	: true
 });
@@ -36,6 +36,6 @@ function sendToast() {
 			sendToast();
 		});
 		
-	}, 500);
+	}, 1000);
 	
 }
